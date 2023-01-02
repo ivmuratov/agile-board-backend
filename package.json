@@ -1,8 +1,8 @@
 {
-  "name": "nest-typescript-starter",
+  "name": "scrum-back",
   "private": true,
   "version": "1.0.0",
-  "description": "Nest TypeScript starter repository",
+  "description": "Back-end app for scrum",
   "license": "MIT",
   "scripts": {
     "build": "nest build",
