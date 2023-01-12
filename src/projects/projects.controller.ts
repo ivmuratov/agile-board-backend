@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { ObjectId } from 'mongoose';
 import { CreateProjectDto } from './dto/create-project.dto';
+import { GetProjectDto } from './dto/get-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 import { ProjectsService } from './projects.service';
 import { Project } from './schemas/project.schema';
@@ -10,12 +11,12 @@ export class ProjectsController {
   constructor(private readonly projectService: ProjectsService) {}
 
   @Get()
-  getAll(): Promise<Project[]> {
+  getAll(): Promise<GetProjectDto[]> {
     return this.projectService.getAll();
   }
 
   @Get(':id')
-  getById(@Param('id') id: ObjectId) {
+  getById(@Param('id') id: ObjectId): Promise<GetProjectDto> {
     return this.projectService.getById(id);
   }
 
